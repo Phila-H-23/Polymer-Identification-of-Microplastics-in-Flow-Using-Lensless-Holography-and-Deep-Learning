@@ -1,0 +1,32 @@
+# Raw data (the .mat files are far too big for GitHub, which rejects files over 100 MB)
+*.mat
+
+# Generated outputs
+pipeline_output/
+results/
+dataset_view_*.png
+pipeline_run_log*.txt
+*.log
+
+# Model files and arrays
+*.pt
+*.pth
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+
+# Editor, tool and OS files
+.vscode/
+.claude/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+desktop.ini

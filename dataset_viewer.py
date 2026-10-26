@@ -34,7 +34,7 @@ import h5py
 # CONFIG - edit these, then run the script
 # ---------------------------------------------------------------------------
 view_raw_frames = True
-RAW_MAT_FILE = "frames_bg_30_4.mat"
+RAW_MAT_FILE = "PP500FRAMES.mat"
 N_RAW_FRAMES_TO_SHOW = 12  # sampled evenly across the whole video, not just the start
 
 view_patches = True

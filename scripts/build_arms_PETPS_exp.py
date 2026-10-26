@@ -38,6 +38,16 @@ def build(arm):
         sys.argv = ["build_reconstructed_dataset.py", "--z", "0", "--suffix", "_z0_PETPS_exp", "--s0-only"]
         br.main()
     else:
+        # Overnight order of 2026-10-07/08: the raw-intensity build and batch are step 6 (lowest priority). The build
+        # waits here until results/overnight_release_bgcorr.flag exists (created by scripts/overnight_coordinator.py
+        # when steps 1 to 5 are finished or cannot run, before 07:45, with at least 3 GB RAM free, or by hand).
+        import time
+        release = os.path.join(D, "results", "overnight_release_bgcorr.flag")
+        while not os.path.exists(release):
+            print(f"HOLD {time.strftime('%Y-%m-%d %H:%M:%S')}: waiting for {release} "
+                  f"(raw-intensity build is step 6 of the overnight order)", flush=True)
+            time.sleep(300)
+        print(f"released {time.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
         import build_bgcorrected_dataset as bb
         bb.REAL_MANIFEST_PATH, bb.BG_MANIFEST_PATH = REAL, BG
         a = ARMS["bgcorr"]

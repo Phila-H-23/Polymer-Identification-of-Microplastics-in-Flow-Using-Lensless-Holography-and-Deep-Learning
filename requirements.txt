@@ -1,0 +1,14 @@
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.2
+scikit-learn==1.4.2
+matplotlib==3.8.4
+seaborn==0.13.2
+pillow==10.3.0
+h5py==3.11.0
+tqdm==4.66.4
+opencv-python==4.13.0.92
+torch==2.11.0
+torchvision==0.26.0
+# imported by holo_pipeline_starter.py and scripts/extract_PETPS_exp.py; not installed in the environment these versions were read from
+trackpy

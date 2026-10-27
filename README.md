@@ -2,7 +2,7 @@
 
 Final-year Mechatronic Engineering thesis project, University of Cape Town.
 
-> **Status: work in progress.** The pipeline and experiments are still being developed. The summary table under [Results so far](#results-so-far) is descriptive and will change as experiments are added.
+> **Status: complete.** The pipeline and experiments are no longer being developed. The summary table under [Results](#results).
 
 ## Contents
 
@@ -13,16 +13,15 @@ Final-year Mechatronic Engineering thesis project, University of Cape Town.
 - [Getting started](#getting-started)
 - [Usage](#usage)
 - [Experiments](#experiments)
-- [Results so far](#results-so-far)
+- [Results](#results)
 - [Reproducibility](#reproducibility)
 - [Acknowledgements](#acknowledgements)
-- [Licence and citation](#licence-and-citation)
 
 ## Overview
 
 Microplastics are small plastic particles that are difficult to identify at scale. This project investigates whether the polymer type of individual microplastic particles flowing through a lensless, polarisation-sensitive in-line holographic sensor can be identified by a convolutional neural network, and how the choice of network input affects classification performance.
 
-The scope is limited to two polymers: **PET** (polyethylene terephthalate) and **PS** (polystyrene).
+The scope evaluated seven polymers and was narrowed to two polymers: **PET** (polyethylene terephthalate) and **PS** (polystyrene).
 
 The work builds on the fluid stream analyser (FSA) developed by Montandon and Nicolls (2024), and uses data recorded with that instrument.
 
@@ -224,7 +223,7 @@ The later experiments are numbered items (41 to 49). Each item fixed its reading
 
 Each numbered chain launches its runs one at a time, waits for free memory before each, and writes a log and a `runs.json`. The matching `*_analysis.py` or `*_report.py` writes the report. Comparisons use the real seed spread as a margin and a paired bootstrap over whole test tracks (1000 resamples, test tracks only, not seeds or recordings).
 
-## Results so far
+## Results
 
 Real macro-F1 for PET vs PS on the z0 expanded set, mean over seeds 0 to 2. These numbers are descriptive. The comparisons are within about one to two seed standard deviations in most cases, and the pre-registered readings in the item reports should be used for any statement about differences.
 
@@ -254,13 +253,16 @@ Nothing here shows that the CNN identifies polymers. The particle-free controls 
 ## Acknowledgements
 
 - Fraser Montandon, for the FSA instrument, the dataset, and ongoing technical and optics guidance.
-- <!-- TODO: supervisor name --> for supervision.
+- Fred Nicolls for supervision.
 
 
 **Reference**
 
-Montandon, F., and Nicolls, F. (2024). Fluid stream analyser for microplastic detection. <!-- TODO: complete the full citation -->
+Montandon, F., and Nicolls, F. (2024). Fluid stream analyser for microplastic detection. @article{montandon2024imaging,
+  author  = {Montandon, Fraser and Nicolls, Fred},
+  title   = {Imaging-Based Lensless Polarization-Sensitive Fluid Stream Analyzer for Automated, Label-Free, and Cost-Effective Microplastic Classification},
+  journal = {Advanced Intelligent Systems},
+  volume  = {6}, number = {12}, pages = {2400235}, year = {2024},
+  doi     = {10.1002/aisy.202400235}}
 
-## Licence and citation
 
-<!-- TODO: choose a licence and add a LICENSE file. The thesis itself should be cited once it is submitted. -->
